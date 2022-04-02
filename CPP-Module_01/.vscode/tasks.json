@@ -1,0 +1,21 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "make re",
+            "command": "make",
+            "args": [
+                "re"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/ex01"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Makefile"
+        }
+    ],
+    "version": "2.0.0"
+}

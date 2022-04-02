@@ -66,7 +66,7 @@ int main(void)
 		std::cout << "=> ";
 		getline(std::cin, command);
 		if (command == "EXIT" || command == "Exit" || command == "exit")
-			exit(0);
+			return (0);
 		else if (command == "ADD" || command == "Add" || command == "add")
 			add_contact(phonebook);
 		else if (command == "SEARCH" || command == "Search" || command == "search")

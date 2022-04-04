@@ -16,7 +16,7 @@ void print_upper_string(int argc, char** argv)
 int main(int argc, char **argv)
 {
 	if (argc == 1)
-		std::cout << "Parameters are required." << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 		print_upper_string(argc, argv);
 	return (0);

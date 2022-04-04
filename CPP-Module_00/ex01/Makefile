@@ -1,5 +1,6 @@
 CC			= c++
-CFLAGS		= -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address 
+CFLAGS		= -std=c++98 -Wall -Wextra -Werror
+DEUBG		= -g -fsanitize=address
 
 NAME		= phonebook
 SRCS		= main.cpp		\

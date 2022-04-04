@@ -1,30 +1,53 @@
 #include "PhoneBook.hpp"
 
+static void process_eof()
+{
+	std::cout << std::endl << "The eof signal has been entered. EXIT" << std::endl;
+	exit(0);
+}
+
+static std::string get_input_str()
+{
+	std::string str = ""; 
+
+	do
+	{
+		getline(std::cin, str);
+		if (std::cin.eof())
+			process_eof();
+		if (str == "")
+		{
+			std::cout << "! Please enter valid number." << std::endl;
+			std::cout << ": ";
+		}
+	} while (str == "");
+	return (str);
+}
+
 static Contact input_data_and_get_contact()
 {
 	Contact contact;
-	std::string str;
+	std::string first_name;
+	std::string last_name;
+	std::string nickname;
+	std::string phone_number;
+	std::string darkest_secret;
 
 	std::cout << "Enter the first name: ";
-	getline(std::cin, str);
-	contact.SetFirstName(str);
+	first_name = get_input_str();
+	contact.SetFirstName(first_name);
 	std::cout << "Enter the last name: ";
-	getline(std::cin, str);
-	contact.SetLastName(str);
+	last_name = get_input_str();
+	contact.SetLastName(last_name);
 	std::cout << "Enter the nickname: ";
-	getline(std::cin, str);
-	contact.SetNickName(str);
-	do
-	{
-		std::cout << "Enter the phone number: ";
-		getline(std::cin, str);
-		if (str == "")
-			std::cout << "! Please enter your number." << std::endl << std::endl;
-	} while (str == "");
-	contact.SetPhoneNumber(str);
+	nickname = get_input_str();
+	contact.SetNickName(nickname);
+	std::cout << "Enter the phone number: ";
+	phone_number = get_input_str();
+	contact.SetPhoneNumber(phone_number);
 	std::cout << "Enter the darkest secret: ";
-	getline(std::cin, str);
-	contact.SetDarkestSecret(str);
+	darkest_secret = get_input_str();
+	contact.SetDarkestSecret(darkest_secret);
 	return (contact);
 }
 
@@ -42,8 +65,10 @@ static void search_contact(PhoneBook& phonebook)
 	while (1)
 	{
 		std::cout << "Enter the user ID. (or Enter -1 if you want to leave.)";
-		std::cout << std::endl << "=> ";
+		std::cout << std::endl << ": ";
 		std::cin >> search_number;
+		if (std::cin.eof())
+			process_eof();
 		std::cin.clear();
 		std::cin.ignore(100, '\n');
 		if (0 < search_number && search_number <= phonebook.GetUserCount())
@@ -62,11 +87,12 @@ int main(void)
 
 	while (1)
 	{
-		std::cout << "Enter the command. (EXIT, ADD, SEARCH)" << std::endl;
-		std::cout << "=> ";
+		std::cout << "Enter the command. (EXIT, ADD, SEARCH): ";
 		getline(std::cin, command);
+		if (std::cin.eof())
+			process_eof();
 		if (command == "EXIT" || command == "Exit" || command == "exit")
-			return (0);
+			break;
 		else if (command == "ADD" || command == "Add" || command == "add")
 			add_contact(phonebook);
 		else if (command == "SEARCH" || command == "Search" || command == "search")

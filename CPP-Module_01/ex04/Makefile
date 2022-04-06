@@ -1,11 +1,12 @@
 CC			= c++
 CFLAGS		= -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address 
 
-NAME		= ex04
+NAME		= replace
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
-SRC_FILES	= main.cpp		\
-			  open_file.cpp
+SRC_FILES	= main.cpp			\
+			  check_error.cpp	\
+			  ft_replace.cpp
 SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS		= $(SRCS:.cpp=.o)
 

@@ -1,7 +1,7 @@
 #ifndef MAIN_HPP
 # define MAIN_HPP
 
-# include "open_file.hpp"
+# include "check_error.hpp"
 # include "ft_replace.hpp"
 # include <iostream>
 # include <string>

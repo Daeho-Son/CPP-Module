@@ -1,8 +1,10 @@
 #ifndef FT_REPLACE_HPP
 # define FT_REPLACE_HPP
 
+# include <iostream>
 # include <string>
+# include <fstream>
 
-std::string replace_old_word_to_new_word(std::string old_string, std::string old_word, std::string new_word);
+void ft_replace(std::string filename, std::string old_word, std::string new_word);
 
 #endif

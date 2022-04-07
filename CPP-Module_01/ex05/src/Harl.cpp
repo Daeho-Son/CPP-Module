@@ -20,15 +20,30 @@ void Harl::error()
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain(std::string s_level)
+void Harl::complain(std::string level)
 {
+	std::string comment[4] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
+
 	void (Harl::*f[4])()= {
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
 		&Harl::error
 	};
-	int level = std::stoi(s_level);
 
-	(this->*f[level])();
+	for (int i = 0; i < 4; i++)
+	{
+		if (comment[i] == level)
+		{
+			(this->*f[i])();
+			return;
+		}
+	}
+
+	std::cout << "! Not correct message" << std::endl;
 }

@@ -7,8 +7,6 @@
 class Harl
 {
 	private:
-		std::string level_;
-
 		void debug();
 		void info();
 		void warning();

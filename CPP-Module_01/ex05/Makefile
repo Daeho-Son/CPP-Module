@@ -1,5 +1,6 @@
 CC			= c++
-CFLAGS		= -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address 
+CFLAGS		= -std=c++98 -Wall -Wextra -Werror
+DEBUG		= -g -fsanitize=address 
 
 NAME		= ex05
 INCLUDE		= -I./include/
@@ -15,12 +16,16 @@ OBJS		= $(SRCS:.cpp=.o)
 all			: $(NAME)
 
 $(NAME)		: $(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+	$(CC) $(OBJS) -o $(NAME)
+
+debug		:
+	$(CC) $(CFLAGS) $(DEBUG) $(INCLUDE) $(SRCS) -o debug
 
 clean		:
 	rm -f $(OBJS)
 
 fclean		: clean
+	rm debug
 	rm -f $(NAME)
 
 re			: fclean all

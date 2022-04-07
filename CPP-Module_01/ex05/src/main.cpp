@@ -8,7 +8,7 @@ int main(void)
 	harl.complain("DEBUG");
 	std::cout << "\n# Info level\n";
 	harl.complain("INFO");
-	std::cout << "\n#` Warning level\n";
+	std::cout << "\n# Warning level\n";
 	harl.complain("WARNING");
 	std::cout << "\n# Error level\n";
 	harl.complain("ERROR");

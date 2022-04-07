@@ -28,7 +28,6 @@ void Harl::complain(std::string level)
 		"WARNING",
 		"ERROR"
 	};
-
 	void (Harl::*f[4])()= {
 		&Harl::debug,
 		&Harl::info,
@@ -44,6 +43,5 @@ void Harl::complain(std::string level)
 			return;
 		}
 	}
-
 	std::cout << "! Not correct message" << std::endl;
 }

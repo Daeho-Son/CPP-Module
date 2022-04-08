@@ -2,7 +2,7 @@
 
 Zombie::Zombie()
 {
-	name_ = "no_name";
+	name_ = "";
 }
 
 Zombie::Zombie(std::string name)

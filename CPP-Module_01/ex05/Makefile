@@ -2,7 +2,7 @@ CC			= c++
 CFLAGS		= -std=c++98 -Wall -Wextra -Werror
 DEBUG		= -g -fsanitize=address 
 
-NAME		= ex05
+NAME		= 01_ex05
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
 SRC_FILES	= main.cpp	\
@@ -25,7 +25,6 @@ clean		:
 	rm -f $(OBJS)
 
 fclean		: clean
-	rm debug
 	rm -f $(NAME)
 
 re			: fclean all

@@ -1,7 +1,7 @@
 CC			= c++
-CFLAGS		= -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address 
+CFLAGS		= -std=c++98 -Wall -Wextra -Werror
 
-NAME		= ex03
+NAME		= 01_ex03
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
 SRC_FILES	= main.cpp		\

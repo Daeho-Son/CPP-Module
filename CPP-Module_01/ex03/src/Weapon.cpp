@@ -1,10 +1,5 @@
 #include "../include/Weapon.hpp"
 
-Weapon::Weapon()
-{
-	type_ = "none";
-}
-
 Weapon::Weapon(std::string type)
 {
 	type_ = type;

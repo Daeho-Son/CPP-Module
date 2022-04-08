@@ -1,10 +1,5 @@
 #include "../include/Zombie.hpp"
 
-Zombie::Zombie()
-{
-	name_ = "no_name";
-}
-
 Zombie::Zombie(std::string name)
 {
 	name_ = name;

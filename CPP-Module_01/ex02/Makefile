@@ -1,7 +1,7 @@
 CC			= c++
-CFLAGS		= -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address 
+CFLAGS		= -std=c++98 -Wall -Wextra -Werror
 
-NAME		= ex02
+NAME		= 01_ex02
 SRC_DIR		= ./src/
 SRC_FILES	= main.cpp
 SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))

@@ -1,7 +1,5 @@
 #include "Fixed.hpp"
 
-const int Fixed::fractional_bits_count_ = 8;
-
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -37,5 +35,3 @@ void Fixed::setRawBits(const int raw)
 	std::cout << "setRawBits member function called" << std::endl;
 	fixed_point_ = raw;
 }
-
-

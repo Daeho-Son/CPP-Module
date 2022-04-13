@@ -12,7 +12,6 @@ int main(void)
 	harl.complain("WARNING");
 	std::cout << "\n# Error level\n";
 	harl.complain("ERROR");
-
 	std::cout << "\n# Not correct Level\n";
 	harl.complain("NONE");
 

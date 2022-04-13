@@ -1,4 +1,5 @@
-#include "main.hpp"
+#include "check_error.hpp"
+#include "ft_replace.hpp"
 
 int main(int argc, char** argv)
 {

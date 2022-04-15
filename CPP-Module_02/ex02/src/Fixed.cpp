@@ -1,4 +1,4 @@
-#include "Fixed.hpp"
+#include "../include/Fixed.hpp"
 
 Fixed::Fixed()
 {
@@ -93,7 +93,7 @@ bool Fixed::operator!=(const Fixed &fixed) const
 	return (fixed_point_ != fixed.fixed_point_);
 }
 
-Fixed& Fixed::operator++(void)
+Fixed& Fixed::operator++()
 {
 	fixed_point_++;
 	return (*this);
@@ -106,7 +106,7 @@ Fixed Fixed::operator++(int)
 	return (temp);
 }
 
-Fixed& Fixed::operator--(void)
+Fixed& Fixed::operator--()
 {
 	fixed_point_--;
 	return (*this);

@@ -1,12 +1,13 @@
-#include "main.hpp"
+#include "../include/Fixed.hpp"
+#include <iostream>
 
 int main( void ) {
 	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+	Fixed const b(10);
+	Fixed const c(42.42f);
+	Fixed const d(b);
 	
-	a = Fixed( 1234.4321f );
+	a = Fixed(1234.4321f);
 	// int n = a.getFixed();
 	// float f = c.getFloatFixed();
 	// std::cout << "test n: " << n << std::endl;

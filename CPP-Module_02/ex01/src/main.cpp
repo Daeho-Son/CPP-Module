@@ -8,10 +8,6 @@ int main( void ) {
 	Fixed const d(b);
 	
 	a = Fixed(1234.4321f);
-	// int n = a.getFixed();
-	// float f = c.getFloatFixed();
-	// std::cout << "test n: " << n << std::endl;
-	// std::cout << "test f: " << f << std::endl;
 	std::cout << "a is " << a << std::endl ;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;

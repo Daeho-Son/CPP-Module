@@ -3,7 +3,7 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap 기본 생성자 호출" << std::endl;
-	name_ = "claptrap";
+	name_ = "ClapTrap";
 	hit_points_ = 10;
 	energy_points_ = 10;
 	attack_damage_ = 0;

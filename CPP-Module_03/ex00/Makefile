@@ -2,12 +2,11 @@ CC			= c++
 CFLAGS		= -std=c++98 -Wall -Wextra -Werror
 DEBUG		= -g -fsanitize=address 
 
-NAME		= 03_ex01
+NAME		= 03_ex00
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
 SRC_FILES	= main.cpp		\
-			  ClapTrap.cpp	\
-			  ScavTrap.cpp
+			  ClapTrap.cpp
 SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS		= $(SRCS:.cpp=.o)
 

@@ -11,7 +11,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "ClapTrap 생성자(string) 호출: " << name << std::endl;
+	std::cout << "ClapTrap 생성자(string) 호출: " << name<< std::endl;
 	name_ = name;
 	hit_points_ = 10;
 	energy_points_ = 10;

@@ -44,23 +44,34 @@ Fixed& Fixed::operator=(const Fixed& fixed)
 
 Fixed Fixed::operator+(const Fixed& fixed)
 {
-	return (this->toFloat() + fixed.toFloat());
+	Fixed temp;
+
+	temp.setRawBits(fixed_point_ + fixed.fixed_point_);
+	return (temp);
 }
 
 Fixed Fixed::operator-(const Fixed& fixed)
 {
-	return (this->toFloat() - fixed.toFloat());
+	Fixed temp;
+
+	temp.setRawBits(fixed_point_ - fixed.fixed_point_);
+	return (temp);
 }
 
 Fixed Fixed::operator*(const Fixed& fixed)
 {
-	return (this->toFloat() * fixed.toFloat());
+	Fixed temp;
+
+	temp.setRawBits((fixed_point_ * fixed.fixed_point_) / (1 << fractional_bits_));
+	return (temp);
 }
 
 Fixed Fixed::operator/(const Fixed& fixed)
 {
-	fixed_point_ /= fixed.fixed_point_;
-	return (this->toFloat() / fixed.toFloat());
+	Fixed temp;
+	
+	temp.setRawBits(fixed_point_ * (1 << fractional_bits_) / fixed.fixed_point_);
+	return (temp);
 }
 
 bool Fixed::operator>(const Fixed &fixed) const
@@ -115,7 +126,7 @@ Fixed& Fixed::operator--()
 Fixed Fixed::operator--(int)
 {
 	Fixed temp = *this;
-	++*this;
+	--*this;
 	return (temp);
 }
 

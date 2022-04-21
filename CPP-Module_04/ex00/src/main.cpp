@@ -4,7 +4,6 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-
 int main(void)
 {
 	{
@@ -35,6 +34,8 @@ int main(void)
 		wrong_animal->makeSound();
 		wrong_cat->makeSound();
 
+		delete wrong_animal;
+		delete wrong_cat;
 	}
 	return (0);
 }

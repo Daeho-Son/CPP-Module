@@ -1,20 +1,22 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	FragTrap fragtrap1("fragtrap 1");
-	FragTrap fragtrap2("fragtrap 2");
-	
-	fragtrap1.printStatus();
-	fragtrap2.printStatus();
-	fragtrap1.attack("fragtrap 2");
-	fragtrap2.takeDamage(fragtrap1.getAttakDamage());
-	fragtrap1.printStatus();
-	fragtrap2.printStatus();
-	fragtrap2.beRepaired(10);
-	fragtrap1.printStatus();
-	fragtrap2.printStatus();
+	DiamondTrap diamondtrap1("diamondtrap 1");
+	DiamondTrap diamondtrap2("diamondtrap 2");
+
+	std::cout << "1: " << diamondtrap1.getName() << std::endl;
+	std::cout << "2: " << diamondtrap2.getName() << std::endl;
+
+	// ClapTrap claptrap1("claptrap 1");
+	// ClapTrap claptrap2("claptrap 2");
+
+	// std::cout << claptrap1.getAttakDamage() << std::endl;
+	// std::cout << claptrap2.getAttakDamage() << std::endl;
+
+
 	return (0);
 }

@@ -7,12 +7,22 @@
 # include <iostream>
 # include <string>
 
-class DiamondTrap : 
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 	private:
+		std::string name_;
 
 	public:
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap& diamondtrap);
+		~DiamondTrap();
 
+		DiamondTrap& operator=(const DiamondTrap& diamondtrap);
+		std::string getName()
+		{
+			return (name_);
+		}
 };
 
 #endif

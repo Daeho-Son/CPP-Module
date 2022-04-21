@@ -5,7 +5,7 @@
 # include <iostream>
 # include <string>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	private:
 		bool gate_keeper_mode_;

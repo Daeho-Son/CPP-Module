@@ -10,6 +10,7 @@ int main(void)
 
 	std::cout << "1: " << diamondtrap1.getName() << std::endl;
 	std::cout << "2: " << diamondtrap2.getName() << std::endl;
+	std::cout << diamondtrap1.getAttakDamage() << std::endl;
 
 	// ClapTrap claptrap1("claptrap 1");
 	// ClapTrap claptrap2("claptrap 2");

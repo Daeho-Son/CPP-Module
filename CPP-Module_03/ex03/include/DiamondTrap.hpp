@@ -19,6 +19,10 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		~DiamondTrap();
 
 		DiamondTrap& operator=(const DiamondTrap& diamondtrap);
+		int getAttackDamage()
+		{
+			return (FragTrap::getAttakDamage());
+		}
 		std::string getName()
 		{
 			return (name_);

@@ -16,5 +16,7 @@ int main(void)
 	fragtrap2.beRepaired(10);
 	fragtrap1.printStatus();
 	fragtrap2.printStatus();
+	fragtrap1.highFivesGuys();
+	fragtrap2.highFivesGuys();
 	return (0);
 }

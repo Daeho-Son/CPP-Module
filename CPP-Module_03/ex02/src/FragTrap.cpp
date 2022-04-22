@@ -3,6 +3,9 @@
 FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "FragTrap 기본 생성자 호출" << std::endl;
+	hit_points_ = 100;
+	energy_points_ = 100;
+	attack_damage_ = 30;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)

@@ -72,6 +72,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	// TODO: energy 가 안 줄어들어?
+	// TODO: ex01 ex02도 수정
 	if (is_stuck_)
 	{
 		std::cout << "움직일 수 없습니다." << std::endl;

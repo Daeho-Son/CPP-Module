@@ -14,15 +14,22 @@ int main()
 	std::cout << std::endl;
 	{
 		std::cout << "# Test 1" << std::endl;
-		Dog *d1 = new Dog();
-		Dog *d2;	
-		std::string* ideaptr = d1->getBrain()->getIdea();
-		ideaptr[0] = "Hello, world";
+		Dog d1;
+		Dog d2;
+
+		std::cout << "[1] d1: " << d1.getBrain()->getIdea()[0] << std::endl;
+		std::cout << "[1] d2: " << d2.getBrain()->getIdea()[0] << std::endl;
+		d1.getBrain()->getIdea()[0] = "Hello, World";
+		std::cout << "[2] d1: " << d1.getBrain()->getIdea()[0] << std::endl;
+		std::cout << "[2] d2: " << d2.getBrain()->getIdea()[0] << std::endl;
+		d2.removeBrain();
+		std::cout << "[3] d1: " << d1.getBrain()->getIdea()[0] << std::endl;
+		std::cout << "[3] d2: " << d2.getBrain()->getIdea()[0] << std::endl;
 		d2 = d1;
-		delete d1;
-		ideaptr = d2->getBrain()->getIdea();
-		std::cout << "test: " << ideaptr[0] << std::endl;
-		// TODO: d2의 데이터도 사라짐.. :(
+		std::cout << "[4] d1: " << d1.getBrain()->getIdea()[0] << std::endl;
+		std::cout << "[4] d2: " << d2.getBrain()->getIdea()[0] << std::endl;
+		d1.removeBrain();
+		d2.removeBrain();
 	}
 	return 0;
 }

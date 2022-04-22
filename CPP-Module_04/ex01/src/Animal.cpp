@@ -14,7 +14,7 @@ Animal::Animal(const Animal& animal)
 
 Animal::~Animal()
 {
-	std::cout << "Animal 소멸자 호출" << std::endl;
+	std::cout << "Animal 소멸자 호출: " << type_ << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& animal)

@@ -8,6 +8,7 @@ class Dog : public Animal
 {
 	private:
 		Brain* brain_;
+		
 
 	public:
 		Dog();
@@ -17,8 +18,8 @@ class Dog : public Animal
 		Dog& operator=(const Dog& dog);
 
 		void makeSound() const;
-		void setBrain(Brain* brain);
 		Brain* getBrain() const;
+		void removeBrain();
 };
 
 #endif

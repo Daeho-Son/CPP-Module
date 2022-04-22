@@ -2,7 +2,7 @@ CC			= c++
 CFLAGS		= -std=c++98 -Wall -Wextra -Werror
 DEBUG		= -g -fsanitize=address 
 
-NAME		= 04_ex00
+NAME		= 04_ex01
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
 SRC_FILES	= main.cpp			\

@@ -2,7 +2,7 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int main()
+int main(void)
 {
 	{
 		std::cout << "# Subject Test" << std::endl;
@@ -13,23 +13,41 @@ int main()
 	}
 	std::cout << std::endl;
 	{
-		std::cout << "# Test 1" << std::endl;
-		Dog d1;
-		Dog d2;
+		std::cout << "# Test" << std::endl;
+		Dog dog1;
+		Dog dog2;
 
-		std::cout << "[1] d1: " << d1.getBrain()->getIdea()[0] << std::endl;
-		std::cout << "[1] d2: " << d2.getBrain()->getIdea()[0] << std::endl;
-		d1.getBrain()->getIdea()[0] = "Hello, World";
-		std::cout << "[2] d1: " << d1.getBrain()->getIdea()[0] << std::endl;
-		std::cout << "[2] d2: " << d2.getBrain()->getIdea()[0] << std::endl;
-		d2.removeBrain();
-		std::cout << "[3] d1: " << d1.getBrain()->getIdea()[0] << std::endl;
-		std::cout << "[3] d2: " << d2.getBrain()->getIdea()[0] << std::endl;
-		d2 = d1;
-		std::cout << "[4] d1: " << d1.getBrain()->getIdea()[0] << std::endl;
-		std::cout << "[4] d2: " << d2.getBrain()->getIdea()[0] << std::endl;
-		d1.removeBrain();
-		d2.removeBrain();
+		dog1.setType("dog 1");
+		dog2.setType("dog 2");
+		std::cout << std::endl;
+		std::cout << "========== base ==========" << std::endl;
+		std::cout << "[0] dog1의 주소: " << &dog1 << std::endl;
+		std::cout << "[0] dog1.getBrain() 의 주소: " << dog1.getBrain() << std::endl;
+		std::cout << "[0] dog2의 주소: " << &dog2 << std::endl;
+		std::cout << "[0] dog2.getBrain() 의 주소: " << dog2.getBrain() << std::endl;
+		std::cout << std::endl;
+		std::cout << "========== dog2.removeBrain() ==========" << std::endl;
+		dog2.removeBrain();
+		std::cout << "[1] dog1의 주소: " << &dog1 << std::endl;
+		std::cout << "[1] dog1.getBrain() 의 주소: " << dog1.getBrain() << std::endl;
+		std::cout << "[1] dog2의 주소: " << &dog2 << std::endl;
+		std::cout << "[1] dog2.getBrain() 의 주소: " << dog2.getBrain() << std::endl;
+		std::cout << std::endl;
+		std::cout << "========== dog2 = dog1 ==========" << std::endl;
+		dog2 = dog1;
+		std::cout << "[2] dog1의 주소: " << &dog1 << std::endl;
+		std::cout << "[2] dog1.getBrain() 의 주소: " << dog1.getBrain() << std::endl;
+		std::cout << "[2] dog2의 주소: " << &dog2 << std::endl;
+		std::cout << "[2] dog2.getBrain() 의 주소: " << dog2.getBrain() << std::endl;
+		std::cout << std::endl;
+		std::cout << "========== dog1.removeBrain() ==========" << std::endl;
+		dog1.removeBrain();
+		std::cout << "[3] dog1의 주소: " << &dog1 << std::endl;
+		std::cout << "[3] dog1.getBrain() 의 주소: " << dog1.getBrain() << std::endl;
+		std::cout << "[3] dog2의 주소: " << &dog2 << std::endl;
+		std::cout << "[3] dog2.getBrain() 의 주소: " << dog2.getBrain() << std::endl;
+		std::cout << std::endl;
+		std::cout << "========== 소멸자 ==========" << std::endl;
 	}
-	return 0;
+	return (0);
 }

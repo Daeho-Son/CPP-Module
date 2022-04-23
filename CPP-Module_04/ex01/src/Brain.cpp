@@ -33,11 +33,15 @@ Brain::Brain(const Brain& brain)
 Brain::~Brain()
 {
 	std::cout << "Brain 소멸자 호출" << std::endl;
-	for (int i = 0; i < 100; ++i)
+	if (idea_ != NULL)
 	{
-		idea_[i] = "";
+		for (int i = 0; i < 100; ++i)
+		{
+			idea_[i] = "";
+		}
+		delete[] idea_;
+		idea_ = NULL;
 	}
-	delete[] idea_;
 }
 
 Brain& Brain::operator=(const Brain& brain)
@@ -53,5 +57,10 @@ Brain& Brain::operator=(const Brain& brain)
 
 std::string* Brain::getIdea() const
 {
+	if (idea_ == NULL)
+	{
+		std::cout << "아무 생각이 없습니다." << std::endl;
+		return (NULL);
+	}
 	return (idea_);
 }

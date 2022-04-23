@@ -3,10 +3,11 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap 기본 생성자 호출" << std::endl;
-	name_ = "claptrap";
+	name_ = "ClapTrap";
 	hit_points_ = 10;
 	energy_points_ = 10;
 	attack_damage_ = 0;
+	is_stuck_ = false;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -16,6 +17,7 @@ ClapTrap::ClapTrap(std::string name)
 	hit_points_ = 10;
 	energy_points_ = 10;
 	attack_damage_ = 0;
+	is_stuck_ = false;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& claptrap)
@@ -25,6 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap& claptrap)
 	hit_points_ = claptrap.hit_points_;
 	energy_points_ = claptrap.energy_points_;
 	attack_damage_ = claptrap.attack_damage_;
+	is_stuck_ = false;
 }
 
 ClapTrap::~ClapTrap()
@@ -44,21 +47,45 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap)
 
 void ClapTrap::attack(const std::string& target)
 {
+	if (is_stuck_)
+	{
+		std::cout << name_ << ": 움직일 수 없습니다." << std::endl;
+		return;
+	}
 	std::cout << "ClapTrap " << name_ << "이(가) " << target << "에게 " << attack_damage_ << "만큼 피해를 줬습니다." << std::endl;
 	energy_points_--;
+	if (energy_points_ <= 0)
+		is_stuck_ = true;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "ClapTrap " << name_ << "이(가) " << amount << "만큼 피해를 받았습니다." << std::endl;	
-	hit_points_ -= amount;
+	if (hit_points_ <= amount)
+	{
+		hit_points_ = 0;
+		is_stuck_ = true;
+	}
+	else
+		hit_points_ -= amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	// TODO: energy 가 안 줄어들어?
+	// TODO: ex01 ex02도 수정
+	if (is_stuck_)
+	{
+		std::cout << name_ << ": 움직일 수 없습니다." << std::endl;
+		return;
+	}
 	std::cout << "ClapTrap " << name_ << "이(가) " << amount << "만큼 수리했습니다." << std::endl;
 	hit_points_ += amount;
 	energy_points_--;
+	if (energy_points_ <= 0)
+	{
+		is_stuck_ = true;
+	}
 }
 
 int ClapTrap::getAttakDamage() const
@@ -72,5 +99,6 @@ void ClapTrap::printStatus()
 	std::cout << "Hit points: " << hit_points_ << std::endl;
 	std::cout << "Energy points: " << energy_points_ << std::endl;
 	std::cout << "Attack damage: " << attack_damage_ << std::endl;
+	std::cout << "is stuck: " << is_stuck_ << std::endl;
 	std::cout << std::endl;
 }

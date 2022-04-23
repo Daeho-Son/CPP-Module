@@ -40,8 +40,15 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& scavtrap)
 
 void ScavTrap::attack(const std::string& target)
 {
+	if (is_stuck_)
+	{
+		std::cout << name_ << ": 움직일 수 없습니다." << std::endl;
+		return;
+	}
 	std::cout << "ScavTrap " << name_ << "이(가) " << target << "에게 " << attack_damage_ << "만큼 피해를 줬습니다." << std::endl;
 	energy_points_--;
+	if (energy_points_ <= 0)
+		is_stuck_ = true;
 }
 
 void ScavTrap::guardGate()

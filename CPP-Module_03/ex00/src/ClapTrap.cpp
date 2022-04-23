@@ -49,7 +49,7 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (is_stuck_)
 	{
-		std::cout << "움직일 수 없습니다." << std::endl;
+		std::cout << name_ << ": 움직일 수 없습니다." << std::endl;
 		return;
 	}
 	std::cout << "ClapTrap " << name_ << "이(가) " << target << "에게 " << attack_damage_ << "만큼 피해를 줬습니다." << std::endl;
@@ -75,7 +75,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	// TODO: ex01 ex02도 수정
 	if (is_stuck_)
 	{
-		std::cout << "움직일 수 없습니다." << std::endl;
+		std::cout << name_ << ": 움직일 수 없습니다." << std::endl;
 		return;
 	}
 	std::cout << "ClapTrap " << name_ << "이(가) " << amount << "만큼 수리했습니다." << std::endl;

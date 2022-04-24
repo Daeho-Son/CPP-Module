@@ -7,6 +7,7 @@ ClapTrap::ClapTrap()
 	hit_points_ = 10;
 	energy_points_ = 10;
 	attack_damage_ = 0;
+	max_hp_ = 9999;
 	is_stuck_ = false;
 }
 
@@ -17,6 +18,7 @@ ClapTrap::ClapTrap(std::string name)
 	hit_points_ = 10;
 	energy_points_ = 10;
 	attack_damage_ = 0;
+	max_hp_ = 9999;
 	is_stuck_ = false;
 }
 
@@ -27,6 +29,7 @@ ClapTrap::ClapTrap(const ClapTrap& claptrap)
 	hit_points_ = claptrap.hit_points_;
 	energy_points_ = claptrap.energy_points_;
 	attack_damage_ = claptrap.attack_damage_;
+	max_hp_ = claptrap.max_hp_;
 	is_stuck_ = claptrap.is_stuck_;
 }
 
@@ -42,6 +45,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap)
 	hit_points_ = claptrap.hit_points_;
 	energy_points_ = claptrap.energy_points_;
 	attack_damage_ = claptrap.attack_damage_;
+	max_hp_ = claptrap.max_hp_;
 	is_stuck_ = claptrap.is_stuck_;
 	return (*this);
 }
@@ -78,8 +82,16 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << name_ << ": 움직일 수 없습니다." << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << name_ << "이(가) " << amount << "만큼 수리했습니다." << std::endl;
-	hit_points_ += amount;
+	if (hit_points_ + amount <= 9999)
+	{
+		std::cout << "ClapTrap " << name_ << "이(가) " << amount << "만큼 수리했습니다." << std::endl;
+		hit_points_ += amount;
+	}
+	else
+	{
+		std::cout << "ClapTrap " << name_ << "이(가) " << max_hp_ - hit_points_ << "만큼 수리했습니다." << std::endl;
+		hit_points_ = 9999;
+	}
 	energy_points_--;
 	if (energy_points_ <= 0)
 	{

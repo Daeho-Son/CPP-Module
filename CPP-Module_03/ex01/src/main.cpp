@@ -16,12 +16,12 @@ int main(void)
 		scavtrap1.attack("scavtrap 2");
 		scavtrap2.takeDamage(scavtrap1.getAttakDamage());
 	}
-	scavtrap1.printStatus();
-	scavtrap2.printStatus();
 	scavtrap1.attack("scavtrap 2");
 	scavtrap1.beRepaired(10);
 	scavtrap2.attack("scavtrap 2");
 	scavtrap2.beRepaired(10);
+	scavtrap1.printStatus();
+	scavtrap2.printStatus();
 
 	std::cout << "\n========== ScavTrap 1과 ScavTrap 2를 guardGate() ==========" << std::endl;
 	scavtrap1.guardGate();

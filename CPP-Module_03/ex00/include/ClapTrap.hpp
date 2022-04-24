@@ -11,6 +11,7 @@ class ClapTrap
 		unsigned int hit_points_;
 		unsigned int energy_points_;
 		unsigned int attack_damage_;
+		unsigned int max_hp_;
 		bool is_stuck_;
 
 	public:

@@ -12,9 +12,12 @@ int main(void)
 	std::cout << "\n========== ScavTrap 1 Attack()으로 에너지 소비" << std::endl;
 	for (int i = 0; i < 50; i++)
 	{
+		std::cout << "i: " << i + 1 << std::endl;
 		scavtrap1.attack("scavtrap 2");
 		scavtrap2.takeDamage(scavtrap1.getAttakDamage());
 	}
+	scavtrap1.printStatus();
+	scavtrap2.printStatus();
 	scavtrap1.attack("scavtrap 2");
 	scavtrap1.beRepaired(10);
 	scavtrap2.attack("scavtrap 2");

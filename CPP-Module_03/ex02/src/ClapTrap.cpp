@@ -3,7 +3,7 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap 기본 생성자 호출" << std::endl;
-	name_ = "ClapTrap";
+	name_ = "clap noNamed";
 	hit_points_ = 10;
 	energy_points_ = 10;
 	attack_damage_ = 0;
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap& claptrap)
 	hit_points_ = claptrap.hit_points_;
 	energy_points_ = claptrap.energy_points_;
 	attack_damage_ = claptrap.attack_damage_;
-	is_stuck_ = false;
+	is_stuck_ = claptrap.is_stuck_;
 }
 
 ClapTrap::~ClapTrap()
@@ -42,6 +42,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap)
 	hit_points_ = claptrap.hit_points_;
 	energy_points_ = claptrap.energy_points_;
 	attack_damage_ = claptrap.attack_damage_;
+	is_stuck_ = claptrap.is_stuck_;
 	return (*this);
 }
 
@@ -72,8 +73,6 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	// TODO: energy 가 안 줄어들어?
-	// TODO: ex01 ex02도 수정
 	if (is_stuck_)
 	{
 		std::cout << name_ << ": 움직일 수 없습니다." << std::endl;

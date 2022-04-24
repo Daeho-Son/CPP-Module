@@ -3,7 +3,7 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap 기본 생성자 호출" << std::endl;
-	name_ = "scavtrap";
+	name_ = "scav noNamed";
 	hit_points_ = 100;
 	energy_points_ = 50;
 	attack_damage_ = 20;

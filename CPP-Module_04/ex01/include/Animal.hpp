@@ -12,15 +12,15 @@ class Animal
 	protected:
 
 	public:
-	Animal();
-	Animal(const Animal& animal);
-	virtual ~Animal();
+		Animal();
+		Animal(const Animal &animal);
+		virtual ~Animal();
 
-	Animal& operator=(const Animal& animal);
-	
-	virtual void makeSound() const;
-	std::string getType() const;
-	void setType(std::string type);
+		Animal &operator=(const Animal &animal);
+
+		virtual void makeSound() const;
+		std::string getType() const;
+		void setType(std::string type);
 };
 
 #endif

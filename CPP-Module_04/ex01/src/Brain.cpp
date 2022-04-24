@@ -12,7 +12,7 @@ Brain::Brain()
 
 Brain::Brain(const Brain* brain)
 {
-	std::cout << "Brain 생성자(Brain*) 호출" << std::endl;
+	std::cout << "Brain 복사 생성자(Brain*) 호출" << std::endl;
 	idea_ = new std::string[100];
 	for (int i = 0; i < 100; ++i)
 	{
@@ -22,7 +22,7 @@ Brain::Brain(const Brain* brain)
 
 Brain::Brain(const Brain& brain)
 {
-	std::cout << "Brain 복사 생성자 호출" << std::endl;
+	std::cout << "Brain 복사 생성자(Brain&) 호출" << std::endl;
 	idea_ = new std::string[100];
 	for (int i = 0; i < 100; ++i)
 	{

@@ -15,7 +15,7 @@ Cat::Cat(const Cat& cat) : Animal(cat)
 		delete brain_;
 		brain_ = NULL;
 	}
-	brain_ = new Brain(cat.getBrain());
+	brain_ = new Brain(*(cat.getBrain()));
 }
 
 Cat::~Cat()
@@ -37,7 +37,8 @@ Cat& Cat::operator=(const Cat& cat)
 		delete brain_;
 		brain_ = NULL;
 	}
-	brain_ = new Brain(cat.getBrain());
+	brain_ = new Brain();
+	*brain_ = *(cat.brain_);
 	return (*this);
 }
 

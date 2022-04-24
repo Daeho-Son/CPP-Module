@@ -10,16 +10,6 @@ Brain::Brain()
 	}
 }
 
-Brain::Brain(const Brain* brain)
-{
-	std::cout << "Brain 복사 생성자(Brain*) 호출" << std::endl;
-	idea_ = new std::string[100];
-	for (int i = 0; i < 100; ++i)
-	{
-		idea_[i] = brain->idea_[i];
-	}
-}
-
 Brain::Brain(const Brain& brain)
 {
 	std::cout << "Brain 복사 생성자(Brain&) 호출" << std::endl;
@@ -47,6 +37,11 @@ Brain::~Brain()
 Brain& Brain::operator=(const Brain& brain)
 {
 	std::cout << "Brain 할당 연산자 오버로딩" << std::endl;
+	if (idea_ != NULL)
+	{
+		delete[] idea_;
+		idea_ = NULL;
+	}
 	idea_ = new std::string[100];
 	for (int i = 0; i < 100; ++i)
 	{

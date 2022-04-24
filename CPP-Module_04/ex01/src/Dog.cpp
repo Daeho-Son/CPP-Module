@@ -15,7 +15,7 @@ Dog::Dog(const Dog& dog) : Animal(dog)
 		delete brain_;
 		brain_ = NULL;
 	}
-	brain_ = new Brain(dog.getBrain());
+	brain_ = new Brain(*(dog.getBrain()));
 }
 
 Dog::~Dog()
@@ -37,7 +37,8 @@ Dog& Dog::operator=(const Dog& dog)
 		delete brain_;
 		brain_ = NULL;
 	}
-	brain_ = new Brain(dog.getBrain());
+	brain_ = new Brain();
+	*brain_ = *(dog.brain_);
 	return (*this);
 }
 

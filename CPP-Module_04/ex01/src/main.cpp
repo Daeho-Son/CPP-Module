@@ -16,10 +16,13 @@ int main(void)
 		delete dog; //should not create a leak
 		delete cat;
 	}
+	std::cout << std::endl << std::endl;
 	{
-		std::cout << " Test 1" << std::endl;
+		std::cout << "# Test 1" << std::endl;
 		Dog* dog1 = new Dog();
 		Dog* dog2 = new Dog();
+		dog1->setType("dog 1");
+		dog2->setType("dog 2");
 
 		std::cout << "========== 주소 ==========" << std::endl;
 		std::cout << "[0] dog1의 주소: " << dog1 << std::endl;

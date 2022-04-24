@@ -11,7 +11,6 @@ class Brain
 
 	public:
 		Brain();
-		Brain(const Brain* bain);
 		Brain(const Brain& brain);
 		~Brain();
 

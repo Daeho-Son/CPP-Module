@@ -1,5 +1,5 @@
-CC			= c++
-CFLAGS		= -std=c++98 -Wall -Wextra -Werror
+CXX			= c++
+CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
 DEBUG		= -g -fsanitize=address 
 
 NAME		= 03_ex02
@@ -13,15 +13,15 @@ SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS		= $(SRCS:.cpp=.o)
 
 %.o			: %.cpp
-	$(CC) -c $(CFLAGS) $(INCLUDE) $< -o $@
+	$(CXX) -c $(CXXFLAGS) $(INCLUDE) $< -o $@
 
 all			: $(NAME)
 
 $(NAME)		: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 debug		:
-	$(CC) $(DEBUG) $(INCLUDE) $(SRCS) -o debug
+	$(CXX) $(DEBUG) $(INCLUDE) $(SRCS) -o debug
 
 clean		:
 	rm -f $(OBJS)

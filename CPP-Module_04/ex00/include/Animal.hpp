@@ -8,7 +8,6 @@ class Animal
 {
 	protected:
 		std::string type_;
-	protected:
 
 	public:
 	Animal();

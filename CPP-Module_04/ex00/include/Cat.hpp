@@ -5,10 +5,6 @@
 
 class Cat : public Animal
 {
-	private:
-
-	protected:
-
 	public:
 		Cat();
 		Cat(const Cat& cat);

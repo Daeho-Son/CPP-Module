@@ -7,7 +7,7 @@
 int main(void)
 {
 	{
-		std::cout << "# Good Case" << std::endl;
+		std::cout << "===== Good Case =====" << std::endl;
 		const Animal *animal = new Animal();
 		const Animal *dog = new Dog();
 		const Animal *cat = new Cat();
@@ -24,7 +24,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 	{
-		std::cout << "# Wrong Case" << std::endl;
+		std::cout << "===== Wrong Case =====" << std::endl;
 		const WrongAnimal* wrong_animal = new WrongAnimal();
 		const WrongAnimal* wrong_cat = new WrongCat();
 

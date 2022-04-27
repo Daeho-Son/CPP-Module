@@ -4,6 +4,7 @@
 # include <iostream>
 # include <exception>
 
+class Form;
 class Bureaucrat
 {
 	private:
@@ -21,6 +22,7 @@ class Bureaucrat
 
 		void downGrade();
 		void upGrade();
+		void signForm(Form& form);
 
 		const std::string getName() const;
 		int getGrade() const;
@@ -30,7 +32,7 @@ class Bureaucrat
 			public:
 				const char* what(void) const throw()
 				{
-					return ("Grade too high");
+					return ("Bureaucrat::GradeTooHighException()");
 				}
 		};
 
@@ -39,7 +41,7 @@ class Bureaucrat
 			public:
 				const char* what(void) const throw()
 				{
-					return ("Grade too low");
+					return ("Bureaucrat::GradeTooLowException()");
 				}
 		};
 };

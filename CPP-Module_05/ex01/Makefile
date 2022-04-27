@@ -6,7 +6,8 @@ NAME		= 05_ex01
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
 SRC_FILES	= main.cpp			\
-			  Bureaucrat.cpp
+			  Bureaucrat.cpp	\
+			  Form.cpp
 SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS		= $(SRCS:.cpp=.o)
 

@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-Bureaucrat::Bureaucrat() : name_("noNamed")
+Bureaucrat::Bureaucrat() : name_("Bureaucrat")
 {
 	std::cout << "Bureaucrat 기본 생성자 호출" << std::endl;
 	grade_ = 150;
@@ -45,14 +46,19 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat& bureaucrat)
 	return (os);
 }
 
-const std::string Bureaucrat::getName() const
-{
-	return (name_);
-}
 
-int Bureaucrat::getGrade() const
+// TODO: form이 signed된 경우 문자열 출력
+void Bureaucrat::signForm(Form& form)
 {
-	return (grade_);
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << this->getName() << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 void Bureaucrat::downGrade()
@@ -67,4 +73,14 @@ void Bureaucrat::upGrade()
 	if (grade_ - 1 < 1)
 		throw GradeTooHighException();
 	grade_--;
+}
+
+const std::string Bureaucrat::getName() const
+{
+	return (name_);
+}
+
+int Bureaucrat::getGrade() const
+{
+	return (grade_);
 }

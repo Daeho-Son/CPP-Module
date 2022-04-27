@@ -21,7 +21,7 @@ Dog::Dog(const Dog& dog) : Animal(dog)
 Dog::~Dog()
 {
 	std::cout << "Dog 소멸자 호출: " << type_ <<  std::endl;
-	if (brain_ != NULL)
+	if (brain_ !=NULL)
 	{
 		delete brain_;
 		brain_ = NULL;

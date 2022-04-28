@@ -3,6 +3,7 @@
 
 # include "Form.hpp"
 # include <exception>
+# include <fstream>
 
 class Bureaucrat;
 class ShrubberyCreationForm : public Form

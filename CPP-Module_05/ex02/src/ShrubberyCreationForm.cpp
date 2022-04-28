@@ -39,13 +39,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw NonSingedException();
 	if (executor.getGrade() > getGradeToExecute())
 		throw ExecuteGradeTooLowException();
-	
-	/*
-	TODO:
-		- ofstream을 이용하여 <target>_srubbery 추가
-		- <target>_srubbery 파일의 권한 체크하고 예외처리
-		- <target>_srubbery 파일에 추가하기
-	*/
 	std::string shrubbery = "               ,@@@@@@@,\n"
 							"       ,,,.   ,@@@@@@/@@,  .oo8888o.\n"
 							"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n"
@@ -56,5 +49,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 							"       |o|        | |         | |\n"
 							"       |.|        | |         | |\n"
 							"    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_";
-	std::cout << shrubbery << std::endl;
+	std::ofstream write_file;
+	std::string file_name = target_ + "_srubbery";
+	write_file.open(file_name);
+	write_file << shrubbery;
+	write_file.close();
+	std::cout << "I planted a Shrubbery!" << std::endl;
 }

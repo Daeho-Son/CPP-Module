@@ -11,7 +11,7 @@ PresidentialPardonForm::PresidentialPardonForm()
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
 	: Form("PresidentialPardonForm", 25, 5)
 {
-	std::cout << "PresidentialPardonForm 기본 생성자 호출" << std::endl;
+	std::cout << "PresidentialPardonForm 생성자(string) 호출" << std::endl;
 	target_ = target;
 }
 

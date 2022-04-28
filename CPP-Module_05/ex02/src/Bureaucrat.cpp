@@ -83,7 +83,7 @@ void Bureaucrat::executeForm(Form const & form)
 	}
 	catch (std::exception& e)
 	{
-		std::cout << name_ << " 실행이 불가능합니다. " << form.getName() << " ... " << e.what() << std::endl;
+		std::cerr << name_ << " 실행이 불가능합니다. " << form.getName() << " ... " << e.what() << std::endl;
 	}
 }
 

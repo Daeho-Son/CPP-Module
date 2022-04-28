@@ -12,7 +12,7 @@ RobotomyRequestForm::RobotomyRequestForm()
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
 	: Form("RobotomyRequestForm", 72, 45)
 {
-	std::cout << "RobotomyRequestForm 기본 생성자 호출" << std::endl;
+	std::cout << "RobotomyRequestForm 생성자(string) 호출" << std::endl;
 	target_ = target;
 	srand(time(NULL));
 }

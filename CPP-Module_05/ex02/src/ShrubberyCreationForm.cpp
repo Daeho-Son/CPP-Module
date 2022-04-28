@@ -11,7 +11,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	: Form("ShrubberyCreationForm", 145, 137)
 {
-	std::cout << "ShrubberyCreationForm 기본 생성자 호출" << std::endl;
+	std::cout << "ShrubberyCreationForm 생성자(string) 호출" << std::endl;
 	target_ = target;
 }
 
@@ -49,7 +49,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 							"       |o|        | |         | |\n"
 							"       |.|        | |         | |\n"
 							"    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_";
-	std::string file_name = target_ + "_srubbery";
+	std::string file_name = target_ + "_shrubbery";
 	std::ofstream write_file;
 	write_file.open(file_name);
 	write_file << shrubbery;

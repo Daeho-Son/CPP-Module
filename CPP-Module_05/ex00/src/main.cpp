@@ -18,11 +18,11 @@ int main(void)
 	}
 	std::cout << std::endl << std::endl;
 	{
-		std::cout << "===== catch case =====" << std::endl;
-		std::cout << "# case 1" << std::endl;
+		std::cout << "===== KO Case =====" << std::endl;
+		std::cout << "KO: 0 grade" << std::endl;
 		try
 		{
-			Bureaucrat bu = Bureaucrat("bu", -1);
+			Bureaucrat bu = Bureaucrat("bu", 0);
 			std::cout << bu << std::endl;
 		}
 		catch (std::exception &e)
@@ -30,7 +30,7 @@ int main(void)
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 		std::cout << std::endl;
-		std::cout << "# case 1" << std::endl;
+		std::cout << "KO: 151 grade" << std::endl;
 		try
 		{
 			Bureaucrat bu = Bureaucrat("bu", 151);
@@ -44,36 +44,30 @@ int main(void)
 	std::cout << std::endl << std::endl;
 	{
 		std::cout << "===== downGrade() 테스트 =====" << std::endl;
-		Bureaucrat* bu_ptr;
 		try
 		{
-			bu_ptr = new Bureaucrat("bu_ptr", 150);
-			std::cout << *bu_ptr << std::endl;
-			bu_ptr->downGrade();
+			Bureaucrat b150 = Bureaucrat("b150", 150);
+			std::cout << b150 << std::endl;
+			b150.downGrade();
 		}
 		catch (std::exception &e)
 		{
 			std::cout << "Error: " << e.what() << std::endl;
 		}
-		std::cout << *bu_ptr << std::endl;
-		delete bu_ptr;
 	}
 	std::cout << std::endl << std::endl;
 	{
 		std::cout << "===== upGrade() 테스트 =====" << std::endl;
-		Bureaucrat* bu_ptr;
 		try
 		{
-			bu_ptr = new Bureaucrat("bu_ptr", 1);
-			std::cout << *bu_ptr << std::endl;
-			bu_ptr->upGrade();
+			Bureaucrat b1 = Bureaucrat("bu_ptr", 1);
+			std::cout << b1 << std::endl;
+			b1.upGrade();
 		}
 		catch (std::exception &e)
 		{
 			std::cout << "Error: " << e.what() << std::endl;
 		}
-		std::cout << *bu_ptr << std::endl;
-		delete bu_ptr;
 	}
 	return (0);
 }

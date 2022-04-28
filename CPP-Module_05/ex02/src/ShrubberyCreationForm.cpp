@@ -19,6 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& shrubb
 	: Form(shrubberycreationform)
 {
 	std::cout << "ShrubberyCreationForm 복사 생성자 호출" << std::endl;
+	target_ = shrubberycreationform.target_;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
@@ -30,6 +31,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
 	std::cout << "ShrubberyCreationForm 할당 연산자 오버로딩" << std::endl;
 	Form::operator=(shrubberycreationform);
+	target_ = shrubberycreationform.target_;
 	return (*this);
 }
 
@@ -39,6 +41,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw ExecuteGradeTooLowException();
 	if (getIsSigned() == false)
 		throw NonSingedException();
+		
 	std::string shrubbery = "               ,@@@@@@@,\n"
 							"       ,,,.   ,@@@@@@/@@,  .oo8888o.\n"
 							"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n"

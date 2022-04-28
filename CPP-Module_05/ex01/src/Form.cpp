@@ -42,7 +42,6 @@ std::ostream& operator<<(std::ostream& os, const Form& form)
 // TODO: bureaucrat의 등급이 충분히 높은 경우(필요한 등급보다 높거나 같음) form 상태를 signed로 변경
 void Form::beSigned(Bureaucrat& bureaucrat)
 {
-
 	if (bureaucrat.getGrade() > grade_to_signed_)
 		throw GradeTooLowException();
 	if(is_signed == true)

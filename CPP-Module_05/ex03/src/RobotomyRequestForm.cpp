@@ -21,6 +21,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& robotomyrequ
 	: Form(robotomyrequestform)
 {
 	std::cout << "RobotomyRequestForm 복사 생성자 호출" << std::endl;
+	target_ = robotomyrequestform.target_;
 	srand(time(NULL));
 }
 
@@ -33,6 +34,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& r
 {
 	std::cout << "RobotomyRequestForm 할당 연산자 오버로딩" << std::endl;
 	Form::operator=(robotomyrequestform);
+	target_ = robotomyrequestform.target_;
 	srand(time(NULL));
 	return (*this);
 }
@@ -44,7 +46,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	if (getIsSigned() == false)
 		throw NonSingedException();
 	
-	std::cout << "(대충 드릴 뚫는 소리)" << std::endl;
+	std::cout << "(대충 드릴로 뚫는 소리)" << std::endl;
 	int random_number = rand() % 2;
 	if (random_number == 0)
 	{

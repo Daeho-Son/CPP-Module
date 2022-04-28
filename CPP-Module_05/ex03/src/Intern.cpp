@@ -49,7 +49,6 @@ Form* Intern::makeForm(std::string name, std::string target)
 		"robotomy request",
 		"presidential pardon"
 	};
-
 	Form* (*fp_form[3])(std::string) = {
 		makeShrubberyCreationForm,
 		makeRobotomyRequestFrom,
@@ -59,9 +58,7 @@ Form* Intern::makeForm(std::string name, std::string target)
 	for (i = 0; i < 3; i++)
 	{
 		if (form_names[i] == name)
-		{
 			break ;
-		}
 	}
 	if (i == 3)
 	{

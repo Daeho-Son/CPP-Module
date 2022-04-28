@@ -19,6 +19,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& pre
 	: Form(presidentialpardonform)
 {
 	std::cout << "PresidentialPardonForm 복사 생성자 호출" << std::endl;
+	target_ = presidentialpardonform.target_;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
@@ -30,6 +31,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 {
 	std::cout << "PresidentialPardonForm 할당 연산자 오버로딩" << std::endl;
 	Form::operator=(presidentialpardonform);
+	target_ = presidentialpardonform.target_;
 	return (*this);
 }
 

@@ -23,7 +23,7 @@ Form::Form(const Form& form)
 	: name_(form.name_), grade_to_signed_(form.grade_to_signed_), grade_to_execute_(form.grade_to_execute_)
 {
 	std::cout << "Form 복사 생성자 호출" << std::endl;
-	is_signed = false;
+	is_signed = form.is_signed;
 }
 
 Form::~Form()
@@ -72,4 +72,29 @@ int Form::getGradeToSigned() const
 int Form::getGradeToExecute() const
 {
 	return (grade_to_execute_);
+}
+
+const char *Form::GradeTooHighException::what(void) const throw()
+{
+	return ("Form::GradeTooHighException()");
+}
+
+const char *Form::GradeTooLowException::what(void) const throw()
+{
+	return ("Form::GradeTooLowException()");
+}
+
+const char *Form::AlreadySignedException::what(void) const throw() 
+{
+	return ("Form::AlreadySignedException()");
+}
+
+const char *Form::NonSingedException::what(void) const throw()
+{
+	return ("Form::nonSignedException()");
+}
+
+const char *Form::ExecuteGradeTooLowException::what(void) const throw()
+{
+	return ("Form::GradeTooLowException()");
 }

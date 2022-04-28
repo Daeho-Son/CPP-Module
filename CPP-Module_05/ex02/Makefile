@@ -29,6 +29,7 @@ clean		:
 	rm -f $(OBJS)
 
 fclean		: clean
+	rm -f sh_target_srubbery
 	rm -f $(NAME)
 
 re			: fclean all

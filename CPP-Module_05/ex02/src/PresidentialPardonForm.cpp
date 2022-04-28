@@ -35,11 +35,10 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	if (getIsSigned() == false)
-		throw NonSingedException();
 	if (executor.getGrade() > getGradeToExecute())
 		throw ExecuteGradeTooLowException();
-
-	// TODO: execute 행동 추가
-	std::cout << "PresidentialPardonForm::execute()" << std::endl;
+	if (getIsSigned() == false)
+		throw NonSingedException();
+	
+	std::cout << executor.getName() << ": " << target_ << "이(가) 사면되었습니다." << std::endl;
 }

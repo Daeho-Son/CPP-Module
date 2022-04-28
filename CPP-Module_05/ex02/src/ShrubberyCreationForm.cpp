@@ -35,10 +35,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	if (getIsSigned() == false)
-		throw NonSingedException();
 	if (executor.getGrade() > getGradeToExecute())
 		throw ExecuteGradeTooLowException();
+	if (getIsSigned() == false)
+		throw NonSingedException();
 	std::string shrubbery = "               ,@@@@@@@,\n"
 							"       ,,,.   ,@@@@@@/@@,  .oo8888o.\n"
 							"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n"
@@ -49,10 +49,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 							"       |o|        | |         | |\n"
 							"       |.|        | |         | |\n"
 							"    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_";
-	std::ofstream write_file;
 	std::string file_name = target_ + "_srubbery";
+	std::ofstream write_file;
 	write_file.open(file_name);
 	write_file << shrubbery;
 	write_file.close();
-	std::cout << "I planted a Shrubbery!" << std::endl;
+	std::cout << executor.getName() << ": I planted a Shrubbery!" << std::endl;
 }

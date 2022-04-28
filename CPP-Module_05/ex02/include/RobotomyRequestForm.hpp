@@ -3,6 +3,8 @@
 
 # include "Form.hpp"
 # include <exception>
+# include <cstdlib>
+# include <ctime>
 
 class Bureaucrat;
 class RobotomyRequestForm : public Form

@@ -8,6 +8,12 @@ Form::Form()
 	is_signed = false;
 }
 
+Form::Form(std::string name, int grade_to_signed, int grade_to_execute)
+	: name_(name), grade_to_signed_(grade_to_signed), grade_to_execute_(grade_to_execute)
+{
+	std::cout << "Form 생성자(string, int, int) 호출" << std::endl;
+	is_signed = false;
+}
 Form::Form(const Form& form)
 	: name_(form.name_), grade_to_signed_(form.grade_to_signed_), grade_to_execute_(form.grade_to_execute_)
 {
@@ -36,8 +42,11 @@ std::ostream& operator<<(std::ostream& os, const Form& form)
 // TODO: bureaucrat의 등급이 충분히 높은 경우(필요한 등급보다 높거나 같음) form 상태를 signed로 변경
 void Form::beSigned(Bureaucrat& bureaucrat)
 {
+
 	if (bureaucrat.getGrade() > grade_to_signed_)
 		throw GradeTooLowException();
+	if(is_signed == true)
+		throw AlreadySignedException();
 	is_signed = true;
 }
 
@@ -59,4 +68,19 @@ int Form::getGradeToSigned() const
 int Form::getGradeToExecute() const
 {
 	return (grade_to_execute_);
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("Form::GradeTooHighException()");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("Form::GradeTooLowException()");
+}
+
+const char *Form::AlreadySignedException::what(void) const throw() 
+{
+	return ("Form::AlreadySignedException()");
 }

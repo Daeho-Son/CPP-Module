@@ -12,6 +12,10 @@ Form::Form(std::string name, int grade_to_signed, int grade_to_execute)
 	: name_(name), grade_to_signed_(grade_to_signed), grade_to_execute_(grade_to_execute)
 {
 	std::cout << "Form 생성자(string, int, int) 호출" << std::endl;
+	if (grade_to_signed > 150 || grade_to_execute > 150)
+		throw GradeTooLowException();
+	if (grade_to_signed < 1 || grade_to_execute < 1)
+		throw GradeTooHighException();
 	is_signed = false;
 }
 Form::Form(const Form& form)

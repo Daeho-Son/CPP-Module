@@ -2,10 +2,11 @@ CXX			= c++
 CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
 DEBUG		= -g -fsanitize=address 
 
-NAME		= 06_ex00
+NAME		= convert
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
-SRC_FILES	= main.cpp
+SRC_FILES	= main.cpp		\
+			  Converter.cpp
 SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS		= $(SRCS:.cpp=.o)
 
@@ -24,9 +25,8 @@ clean		:
 	rm -f $(OBJS)
 
 fclean		: clean
-	rm -f sh_target_srubbery
 	rm -f $(NAME)
 
 re			: fclean all
 
-.PHONY		: all bonus clean fclean re
+.PHONY		: all debug clean fclean re

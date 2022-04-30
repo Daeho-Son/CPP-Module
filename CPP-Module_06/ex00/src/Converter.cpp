@@ -56,9 +56,9 @@ char Converter::toChar()
 
 int Converter::toInt()
 {
+	if (base_ < -2147483648.0 || 2147483647.0 < base_)
+		throw IntImpossibleException();
 	int temp = static_cast<int>(base_);
-	if (temp == -2147483648)
-		throw IntNanException();
 	return (temp);
 }
 
@@ -128,7 +128,7 @@ const char* Converter::CharImpossibleException::what() const throw()
 	return ("impossible");
 }
 
-const char* Converter::IntNanException::what() const throw()
+const char* Converter::IntImpossibleException::what() const throw()
 {
 	return ("impossible");
 }

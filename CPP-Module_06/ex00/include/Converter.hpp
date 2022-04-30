@@ -40,7 +40,7 @@ class Converter
 			const char* what() const throw();
 		};
 		
-		class IntNanException : public std::exception
+		class IntImpossibleException : public std::exception
 		{
 			const char* what() const throw();
 		};

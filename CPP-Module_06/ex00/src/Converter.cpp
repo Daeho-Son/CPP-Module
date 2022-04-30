@@ -9,12 +9,20 @@ Converter::Converter()
 Converter::Converter(char* c)
 {
 	// std::cout << "Converter 생성자(char*) 호출" << std::endl;
+	// TODO: 문자 리터럴이 들어왔을 때
 	char* str_end;
 	base_ = strtod(c, &str_end);
-	if (*str_end != '\0' && *str_end != 'f')
-		throw (ConstructorErrorException());
-	if (*str_end == 'f' && *(str_end + 1) != '\0')
-		throw (ConstructorErrorException());
+	if (std::strlen(c) == 1 && base_ == 0 && c[0] != '0')
+	{
+		base_ = static_cast<double>(c[0]);
+	}
+	else
+	{
+		if (*str_end != '\0' && *str_end != 'f')
+			throw(ConstructorErrorException());
+		if (*str_end == 'f' && *(str_end + 1) != '\0')
+			throw(ConstructorErrorException());
+	}
 }
 
 Converter::Converter(const Converter& converter)

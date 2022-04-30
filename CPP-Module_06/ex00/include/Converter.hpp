@@ -19,7 +19,6 @@ class Converter
 		Converter(char* c);
 		~Converter();
 
-
 		char toChar();
 		int toInt();
 		float toFloat();

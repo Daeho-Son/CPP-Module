@@ -56,6 +56,8 @@ char Converter::toChar()
 
 int Converter::toInt()
 {
+	if (base_ != base_)
+		throw IntImpossibleException();
 	if (base_ < -2147483648.0 || 2147483647.0 < base_)
 		throw IntImpossibleException();
 	int temp = static_cast<int>(base_);

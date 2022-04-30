@@ -27,8 +27,9 @@ Base* generate(void)
 
 void identify(Base* p)
 {
-	
-	if (dynamic_cast<A *>(p) != NULL)
+	A* a;
+	a = dynamic_cast<A*>(p);
+	if (a != NULL)
 	{
 		std::cout << "A" << std::endl;
 	}
@@ -51,7 +52,8 @@ void identify(Base& p)
 	try
 	{
 		A& a_ref = dynamic_cast<A&>(p);
-		std::cout << "A: " << &a_ref << std::endl;
+		(void)a_ref;
+		std::cout << "A" << std::endl;
 		return ;
 	}
 	catch (std::exception& e)
@@ -62,7 +64,8 @@ void identify(Base& p)
 	try
 	{
 		B& b_ref = dynamic_cast<B&>(p);
-		std::cout << "B: " << &b_ref << std::endl;
+		(void)b_ref;
+		std::cout << "B" << std::endl;
 		return ;
 	}
 	catch (std::exception& e)
@@ -73,7 +76,8 @@ void identify(Base& p)
 	try
 	{
 		C& c_ref = dynamic_cast<C&>(p);
-		std::cout << "C: " << &c_ref << std::endl;
+		(void)c_ref;
+		std::cout << "C" << std::endl;
 		return ;
 	}
 	catch (std::exception& e)
@@ -93,8 +97,8 @@ int main(void)
 	std::cout << std::endl;
 
 	std::cout << "레퍼런스로 값을 받았을 때 identify()" << std::endl;
-	Base& b_a = *b_ptr;
-	identify(b_a);
+	Base& b_ref = *b_ptr;
+	identify(b_ref);
 
 	if (b_ptr != NULL)
 		delete b_ptr;

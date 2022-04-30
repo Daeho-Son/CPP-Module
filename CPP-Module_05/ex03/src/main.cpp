@@ -12,7 +12,7 @@ int main(void)
 		Bureaucrat b1("b1", 1);
 		Bureaucrat b150("b150", 150);
 		Intern someRandomIntern;
-		Form *rrf;
+		Form *rrf = NULL;
 
 		std::cout << "\nKO: makeForm() 시도" << std::endl;
 		rrf = someRandomIntern.makeForm("shrubbery", "Bender");
@@ -40,8 +40,13 @@ int main(void)
 
 		std::cout << "\nKO: signed 된 form에 execute 시도" << std::endl;
 		b150.executeForm(*rrf);
-		
 		std::cout << std::endl;
+		
+		if (rrf != NULL)
+		{
+			delete rrf;
+			rrf = NULL;
+		}
 	}
 	std::cout << std::endl << std::endl;
 	{
@@ -49,7 +54,7 @@ int main(void)
 		Bureaucrat b1("b1", 1);
 		Bureaucrat b150("b150", 150);
 		Intern someRandomIntern;
-		Form *rrf;
+		Form *rrf = NULL;
 
 		std::cout << "\nKO: makeForm() 시도" << std::endl;
 		rrf = someRandomIntern.makeForm("robotomy", "Bender");
@@ -77,8 +82,13 @@ int main(void)
 
 		std::cout << "\nKO: signed 된 form에 execute 시도" << std::endl;
 		b150.executeForm(*rrf);
-		
 		std::cout << std::endl;
+
+		if (rrf != NULL)
+		{
+			delete rrf;
+			rrf = NULL;
+		}
 	}
 	std::cout << std::endl << std::endl;
 	{
@@ -86,7 +96,7 @@ int main(void)
 		Bureaucrat b1("b1", 1);
 		Bureaucrat b150("b150", 150);
 		Intern someRandomIntern;
-		Form *rrf;
+		Form *rrf = NULL;
 
 		std::cout << "\nKO: makeForm() 시도" << std::endl;
 		rrf = someRandomIntern.makeForm("presidential", "Bender");
@@ -114,8 +124,13 @@ int main(void)
 
 		std::cout << "\nKO: signed 된 form에 execute 시도" << std::endl;
 		b150.executeForm(*rrf);
-		
 		std::cout << std::endl;
+		
+		if (rrf != NULL)
+		{
+			delete rrf;
+			rrf = NULL;
+		}
 	}
 	return (0);
 }

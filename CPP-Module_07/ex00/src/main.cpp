@@ -59,6 +59,7 @@ int main(void)
 		std::cout << "min: " << min(x, y) << std::endl;
 		std::cout << "max: " << max(x, y) << std::endl;
 	}
+	std::cout << std::endl << std::endl;
 	{
 		std::cout << "===== double 테스트 =====" << std::endl;
 		double x = 0.3;
@@ -70,6 +71,10 @@ int main(void)
 		std::cout << "x: " << x << "\ty: " << y << std::endl;
 		std::cout << "min: " << min(x, y) << std::endl;
 		std::cout << "max: " << max(x, y) << std::endl;
+	}
+	std::cout << std::endl << std::endl;
+	{
+
 	}
 	return (0);
 }

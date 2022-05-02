@@ -72,9 +72,5 @@ int main(void)
 		std::cout << "min: " << min(x, y) << std::endl;
 		std::cout << "max: " << max(x, y) << std::endl;
 	}
-	std::cout << std::endl << std::endl;
-	{
-
-	}
 	return (0);
 }

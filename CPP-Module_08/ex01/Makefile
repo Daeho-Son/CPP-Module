@@ -2,10 +2,11 @@ CXX			= c++
 CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
 DEBUG		= -g -fsanitize=address 
 
-NAME		= 07_ex02
+NAME		= 08_ex01
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
-SRC_FILES	= main.cpp
+SRC_FILES	= main.cpp	\
+			  Span.cpp
 SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS		= $(SRCS:.cpp=.o)
 

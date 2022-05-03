@@ -2,7 +2,7 @@ CXX			= c++
 CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
 DEBUG		= -g -fsanitize=address 
 
-NAME		= 07_ex02
+NAME		= 08_ex02
 INCLUDE		= -I./include/
 SRC_DIR		= ./src/
 SRC_FILES	= main.cpp

@@ -13,25 +13,25 @@ class OutOfRangeException : public std::exception
 
 // TODO: find()로 수정해서 재구현
 template<typename T>
-typename T::iterator easyfind(T& t, int x)
+typename T::iterator easyfind(T& container, int x)
 {
-	for (typename T::iterator it = t.begin(); it != t.end(); it++)
-	{
-		if (*it == x)
-			return (it);
-	}
-	throw OutOfRangeException();
+	typename T::iterator it;
+	it = std::find(container.begin(), container.end(), x);
+	if (it == container.end())
+		throw OutOfRangeException();
+	return (it);
 }
 
+// TODO: find()로 수정해서 재구현
 template<typename T>
-typename T::const_iterator easyfind(const T& t, int x)
+typename T::const_iterator easyfind(const T& container, int x)
 {
-	for (typename T::const_iterator it = t.begin(); it != t.end(); it++)
-	{
-		if (*it == x)
-			return (it);
-	}
-	throw OutOfRangeException();
+	typename T::const_iterator c_it;
+
+	c_it = std::find(container.begin(), container.end(), x);
+	if (c_it == container.end())
+		throw OutOfRangeException();
+	return (c_it);
 }
 
 #endif

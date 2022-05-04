@@ -11,6 +11,7 @@ class OutOfRangeException : public std::exception
 	}
 };
 
+// TODO: find()로 수정해서 재구현
 template<typename T>
 typename T::iterator easyfind(T& t, int x)
 {

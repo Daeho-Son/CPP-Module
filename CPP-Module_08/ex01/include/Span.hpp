@@ -24,6 +24,9 @@ class Span
 		unsigned int longestSpan();
 		void printData() const;
 
+
+		// TODO: size를 비교해서 size가 충분하지 않으면 throw, size가 충분하면 v_.insert(v_.end(), container.begin(), container.end()) 로 추가
+		// TODO: vector - insert 함수 공부
 		template<typename T>
 		void addNumbers(T& container)
 		{

@@ -61,7 +61,7 @@ unsigned int Span::longestSpan()
 	if (v_.size() == 1)
 		throw FewSizeException();
 	sort(v_.begin(), v_.end());
-	return (*(v_.end() - 1) - *(v_.begin()));
+	return (static_cast<unsigned int>(*(v_.end() - 1) - *(v_.begin())));
 }
 
 void Span::printData() const

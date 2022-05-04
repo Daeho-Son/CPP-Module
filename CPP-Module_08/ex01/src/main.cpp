@@ -1,4 +1,5 @@
 #include "Span.hpp"
+#include <vector>
 
 int main(void)
 {
@@ -11,8 +12,8 @@ int main(void)
 		sp.addNumber(9);
 		sp.addNumber(11);
 		sp.printData();
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		std::cout << "shortestSpan(): " << sp.shortestSpan() << std::endl;
+		std::cout << "longestSpan(): " << sp.longestSpan() << std::endl;
 	}
 	std::cout << std::endl << std::endl;
 	{
@@ -29,8 +30,8 @@ int main(void)
 			}
 			std::cout << "# span.printData()" << std::endl;
 			span.printData();
-			std::cout << span.shortestSpan() << std::endl;
-			std::cout << span.longestSpan() << std::endl;
+			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
+			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
 		}
 		catch (std::exception &e)
 		{
@@ -52,8 +53,8 @@ int main(void)
 			}
 			std::cout << "# span.printData()" << std::endl;
 			span.printData();
-			std::cout << span.shortestSpan() << std::endl;
-			std::cout << span.longestSpan() << std::endl;
+			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
+			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
 		}
 		catch (std::exception &e)
 		{
@@ -75,8 +76,8 @@ int main(void)
 			}
 			std::cout << "# span.printData()" << std::endl;
 			// span.printData();
-			std::cout << span.shortestSpan() << std::endl;
-			std::cout << span.longestSpan() << std::endl;
+			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
+			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
 		}
 		catch (std::exception &e)
 		{
@@ -86,19 +87,6 @@ int main(void)
 	std::cout << std::endl << std::endl;
 	{
 		std::cout << "===== Test 4: FullSizeException() =====" << std::endl;
-		Span span1(5);
-		try
-		{
-			for (int i = 0; i < 6; i++)
-			{
-				span1.addNumber(i);
-			}
-		}
-		catch (std::exception& e)
-		{
-			std::cout << e.what() << std::endl;
-		}
-
 		Span span2(0);
 		try
 		{
@@ -116,12 +104,9 @@ int main(void)
 
 		try
 		{
-			for (int i = 0; i < 1; i++)
-			{
-				span.addNumber(i);
-			}
-			span.longestSpan();
-			// span.shortestSpan();
+			span.addNumber(1);
+			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
+			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
 		}
 		catch (std::exception &e)
 		{
@@ -131,17 +116,47 @@ int main(void)
 	std::cout << std::endl << std::endl;
 	{
 		std::cout << "===== Test 6: EmptySizeException() =====" << std::endl;
-		Span span(1);
-
+		Span span_1(1);
 		try
 		{
-			span.longestSpan();
+			std::cout << "shortestSpan(): " << span_1.shortestSpan() << std::endl;
+			std::cout << "longestSpan(): " << span_1.longestSpan() << std::endl;
 		}
 		catch (std::exception& e)
 		{
 			std::cout << e.what() << std::endl;
 		}
 
+		Span span_0(0);
+		try
+		{
+			std::cout << "shortestSpan(): " << span_0.shortestSpan() << std::endl;
+			std::cout << "longestSpan(): " << span_0.longestSpan() << std::endl;
+		}
+		catch (std::exception& e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+	std::cout << std::endl << std::endl;
+	{
+		std::cout << "===== Test 7: addNumbers() =====" << std::endl;
+		std::vector<int> v;
+		for (int i = 0; i < 10000; i++)
+		{
+			v.push_back(i);
+		}
+		Span span(9999);
+		span.addNumbers(v);
+		try
+		{
+			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
+			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
+		}
+		catch (std::exception& e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 	return (0);
 }

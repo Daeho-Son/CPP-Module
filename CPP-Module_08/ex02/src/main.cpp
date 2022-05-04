@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	std::cout << "===== Subject Test 1 =====" << std::endl;
+	std::cout << "===== Subject Test =====" << std::endl;
 	{
 		MutantStack<int> mstack;
 		mstack.push(5);

@@ -24,6 +24,38 @@ class Span
 		unsigned int longestSpan();
 		void printData() const;
 
+		template<typename T>
+		void addNumbers(T& container)
+		{
+			try
+			{
+				for (typename T::iterator it = container.begin(); it != container.end(); it++)
+				{
+					addNumber(*it);
+				}
+			}
+			catch (std::exception& e)
+			{
+				std::cout << "남은 공간이 없습니다. " << e.what() << std::endl;
+			}
+		}
+
+		template<typename T>
+		void addNumbers(const T& container)
+		{
+			try
+			{
+				for (typename T::const_iterator c_it = container.begin(); c_it != container.end(); c_it++)
+				{
+					addNumber(*c_it);
+				}
+			}
+			catch (std::exception& e)
+			{
+				std::cout << "남은 공간이 없습니다. " << e.what() << std::endl;
+			}
+		}
+
 	class FullSizeException : public std::exception
 	{
 		const char *what() const throw();

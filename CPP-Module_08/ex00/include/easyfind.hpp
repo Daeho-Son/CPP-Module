@@ -2,6 +2,7 @@
 # define EASYFIND_HPP
 
 # include <exception>
+# include <algorithm>
 
 class OutOfRangeException : public std::exception
 {
@@ -11,7 +12,6 @@ class OutOfRangeException : public std::exception
 	}
 };
 
-// TODO: find()로 수정해서 재구현
 template<typename T>
 typename T::iterator easyfind(T& container, int x)
 {
@@ -22,12 +22,10 @@ typename T::iterator easyfind(T& container, int x)
 	return (it);
 }
 
-// TODO: find()로 수정해서 재구현
 template<typename T>
 typename T::const_iterator easyfind(const T& container, int x)
 {
 	typename T::const_iterator c_it;
-
 	c_it = std::find(container.begin(), container.end(), x);
 	if (c_it == container.end())
 		throw OutOfRangeException();

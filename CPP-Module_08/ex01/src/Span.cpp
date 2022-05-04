@@ -87,3 +87,8 @@ const char* Span::EmptySizeException::what() const throw()
 {
 	return ("Span::EmptySizeException()");
 }
+
+const char* Span::NotEnoughSizeLeftException::what() const throw()
+{
+	return ("Span::NotEnoughSizeLeftException()");
+}

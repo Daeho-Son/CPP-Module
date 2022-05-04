@@ -140,16 +140,38 @@ int main(void)
 	}
 	std::cout << std::endl << std::endl;
 	{
-		std::cout << "===== Test 7: addNumbers() =====" << std::endl;
+		std::cout << "===== Test 7: addNumbers() - NotEnoughSizeLeftException() =====" << std::endl;
+		std::vector<int> v;
+		for (int i = 0; i < 10001; i++)
+		{
+			v.push_back(i);
+		}
+		Span span(10000);
+		try
+		{
+			span.addNumbers(v);
+			// span.printData();
+			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
+			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
+		}
+		catch (std::exception& e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+	std::cout << std::endl << std::endl;
+	{
+		std::cout << "===== Test 8: addNumbers() =====" << std::endl;
 		std::vector<int> v;
 		for (int i = 0; i < 10000; i++)
 		{
 			v.push_back(i);
 		}
-		Span span(9999);
-		span.addNumbers(v);
+		Span span(10000);
 		try
 		{
+			span.addNumbers(v);
+			// span.printData();
 			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
 			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
 		}

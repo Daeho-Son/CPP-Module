@@ -92,3 +92,8 @@ const char* Span::NotEnoughSizeLeftException::what() const throw()
 {
 	return ("Span::NotEnoughSizeLeftException()");
 }
+
+const char* Span::InvalidRangeOfIteratorException::what() const throw()
+{
+	return ("Span::InvalidRangeOfIteratorException()");
+}

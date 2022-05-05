@@ -149,7 +149,7 @@ int main(void)
 		Span span(10000);
 		try
 		{
-			span.addNumbers(v);
+			// span.addNumbers(v);
 			// span.printData();
 			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
 			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
@@ -170,8 +170,10 @@ int main(void)
 		Span span(10000);
 		try
 		{
-			span.addNumbers(v);
-			// span.printData();
+			std::cout << "*(v.end() - 1): " << *(v.end() - 1) << std::endl;
+			std::cout << "*v.end(): " << *v.end() << std::endl;
+			span.addNumbers(v.begin(), v.end());
+			span.printData();
 			std::cout << "shortestSpan(): " << span.shortestSpan() << std::endl;
 			std::cout << "longestSpan(): " << span.longestSpan() << std::endl;
 		}

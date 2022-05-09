@@ -9,7 +9,6 @@ Converter::Converter()
 Converter::Converter(char* c)
 {
 	// std::cout << "Converter 생성자(char*) 호출" << std::endl;
-	// TODO: 문자 리터럴이 들어왔을 때
 	char* str_end;
 	base_ = strtod(c, &str_end);
 	if (std::strlen(c) == 1 && base_ == 0 && c[0] != '0')
@@ -77,6 +76,7 @@ double Converter::toDouble()
 
 void Converter::Print()
 {
+	// char
 	try
 	{
 		std::cout << "char: ";
@@ -88,6 +88,7 @@ void Converter::Print()
 		std::cout << e.what() << std::endl;
 	}
 
+	// int
 	int i = 0;
 	try
 	{
@@ -100,6 +101,7 @@ void Converter::Print()
 		std::cout << e.what() << std::endl;
 	}
 
+	// float
 	float f = toFloat();
 	std::cout << "float: ";
 	if (f - i != 0)
@@ -107,6 +109,7 @@ void Converter::Print()
 	else
 		std::cout << f << ".0f" << std::endl;
 
+	// double
 	double d = toDouble();
 	std::cout << "double: ";
 	if (d - i != 0)
